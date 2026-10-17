@@ -1,7 +1,79 @@
+
+/* ===== Global ===== */
+
 html {
+    color-scheme: light dark;
     --color-accent: oklch(65% 50% 0);
+    --border-color: oklch(50% 10% 200 / 40%);
+
     accent-color: var(--color-accent);
 }
+
+body {
+    max-width: 100ch;
+    margin-inline: auto;
+    padding: 1em;
+    font: 100%/1.5 system-ui;
+}
+
+h1 {
+    font-size: 400%;
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+
+/* ===== Navigation ===== */
+
+nav {
+    display: flex;
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav a {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav a.current {
+    border-bottom: 0.4em solid var(--border-color);
+    padding-bottom: 0.1em;
+}
+
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
+    padding-bottom: 0.1em;
+    background-color: color-mix(
+        in oklch,
+        var(--color-accent),
+        canvas 85%
+    );
+}
+
+
+/* ===== Theme Selector ===== */
+
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+}
+
+
+/* ===== Home ===== */
 
 .home {
     text-align: left;
@@ -14,49 +86,8 @@ html {
     height: auto;
 }
 
-body {
-  max-width: 100ch;
-  margin-inline: auto;
-  padding: 1em;
-  font: 100%/1.5 system-ui;
-}
 
-nav {
-    display: flex;
-    margin-bottom: 1em;
-    border-bottom: 1px solid oklch(80% 3% 200);
-}
-
-nav a {
-    flex: 1;
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    padding: 0.5em;
-}
-
-nav a.current {
-    border-bottom: 0.4em solid oklch(80% 3% 200);
-    padding-bottom: 0.1em;
-}
-
-nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
-    padding-bottom: 0.1em;
-}
-
-nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
-    padding-bottom: 0.1em;
-    background-color: oklch(from var(--color-accent) 95% 5% h);
-}
-
-input,
-textarea,
-button {
-    font: inherit;
-}
-
+/* ===== Contact Form ===== */
 
 form {
     display: grid;
@@ -74,9 +105,15 @@ form button {
     grid-column: 1 / -1;
 }
 
+
+/* ===== Projects ===== */
+
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(15em, 1fr)
+    );
     gap: 1em;
 }
 
@@ -90,15 +127,8 @@ form button {
     margin: 0;
 }
 
-h1 {
-    font-size: 400%;
-    text-align: left;
-}
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    text-wrap: balance;
-}
+/* ===== Resume ===== */
 
 .resume-page h1 {
     margin-bottom: 0.8em;
@@ -130,7 +160,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .resume-page .skills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(120px, 1fr)
+    );
     gap: 0.5em 1em;
 }
 
