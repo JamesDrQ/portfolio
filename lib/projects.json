@@ -1,0 +1,75 @@
+
+[
+  {
+    "title": "Agentic AI Real Estate Assistant",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Developed an AI-powered real estate assistant using multi-agent workflows, retrieval-augmented generation, and semantic search to help users explore property listings."
+  },
+  {
+    "title": "Real Estate NLP Query Parser",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Built a natural language parser that converts housing search requests into structured filters and parameterized SQL queries."
+  },
+  {
+    "title": "Full-Stack Real Estate Platform",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Developed a real estate web application using React, Node.js, Express, and MySQL with property filtering, pagination, detailed listings, and database indexing."
+  },
+  {
+    "title": "Real Estate Named Entity Extraction",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Built and evaluated an NLP pipeline for extracting structured property information, including bedrooms, bathrooms, square footage, and amenities."
+  },
+  {
+    "title": "FIRE-Bench: LLM Agent Evaluation",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Contributed to research on evaluating language model agents through a benchmarking framework."
+  },
+  {
+    "title": "Ultra-Processed Foods Visualization",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Created a data visualization comparing the proportion of ultra-processed food products across grocery stores using predicted NOVA classifications."
+  },
+  {
+    "title": "Climate Change and Electricity Generation",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Explored contrasting narratives about renewable and fossil-fuel electricity using installed capacity and actual electricity generation data."
+  },
+  {
+    "title": "Personal Portfolio Website",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Built a responsive personal website using HTML, CSS, JavaScript, JSON-based project rendering, and GitHub API integration."
+  },
+  {
+    "title": "California Birth Statistics Analysis",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Analyzed California natality data using R to investigate county-level differences in birth sex ratios and perform chi-square hypothesis testing."
+  },
+  {
+    "title": "Chi-Square Simulation Study",
+    "year": 2026,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Conducted Monte Carlo simulations in R to investigate empirical Type I error rates of chi-square tests under different sample sizes and category counts."
+  },
+  {
+    "title": "Data Science Course Project (Placeholder)",
+    "year": 2025,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Placeholder for a data science project completed in 2025. Replace with actual project details."
+  },
+  {
+    "title": "Programming Project (Placeholder)",
+    "year": 2024,
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Placeholder for an earlier programming project. Replace with actual project details."
+  }
+]

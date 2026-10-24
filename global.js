@@ -1,4 +1,3 @@
-
 console.log('IT’S ALIVE!');
 
 function $$(selector, context = document) {
@@ -112,4 +111,68 @@ if (form) {
 
         location.href = url;
     });
+}
+
+export async function fetchJSON(url) {
+  try {
+    // 1. Fetch JSON data
+    const response = await fetch(url);
+
+    // 2. Inspect the response
+    console.log(response);
+
+    // 3. Check for errors
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+
+    // 4. Parse JSON
+    const data = await response.json();
+
+    // 5. Return data
+    return data;
+
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+    return null;
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  // Check if the container is valid
+  if (!containerElement) {
+    console.error('Projects container not found');
+    return;
+  }
+
+  // Clear existing content
+  containerElement.innerHTML = '';
+
+  // Check if projects data is valid
+  if (!Array.isArray(projects) || projects.length === 0) {
+    containerElement.textContent = 'No projects available.';
+    return;
+  }
+
+  // Validate heading level
+  if (!/^h[1-6]$/.test(headingLevel)) {
+    headingLevel = 'h2';
+  }
+
+  // Create an article for each project
+  projects.forEach((project) => {
+    const article = document.createElement('article');
+
+    article.innerHTML = `
+      <${headingLevel}>${project.title ?? 'Untitled Project'}</${headingLevel}>
+      ${project.image ? `<img src="${project.image}" alt="${project.title ?? 'Project image'}">` : ''}
+      <p>${project.description ?? ''}</p>
+    `;
+
+    containerElement.appendChild(article);
+  });
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/JamesDrQ`);
 }
