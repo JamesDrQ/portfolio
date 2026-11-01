@@ -207,3 +207,112 @@ form button {
     font-size: 1.2em;
   }
 }
+
+/* ===== Project Year ===== */
+
+.project-year {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #777;
+  font-variant-numeric: lining-nums;
+}
+
+/* ===== Pie Chart Layout ===== */
+
+.project-pie-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+#projects-pie-plot {
+  width: min(35%, 20em);
+  height: auto;
+  flex-shrink: 0;
+  margin-block: 1em;
+  overflow: visible;
+}
+
+/* ===== Legend ===== */
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  margin-block: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ===== Responsive Layout ===== */
+
+@media (max-width: 600px) {
+  .project-pie-container {
+    flex-direction: column;
+  }
+
+  #projects-pie-plot {
+    width: min(70%, 18em);
+  }
+
+  .legend {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.searchBar {
+  display: block;
+  width: 100%;
+  padding: 0.6em 1em;
+  margin-block: 1.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* ===== Pie Chart Hover Effect ===== */
+
+#projects-pie-plot path {
+  transition: opacity 300ms;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+/* ===== Pie Chart Selection ===== */
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+#projects-pie-plot path.selected {
+  fill: var(--color);
+}
+
+#projects-pie-plot path {
+  cursor: pointer;
+}
