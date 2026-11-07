@@ -316,3 +316,142 @@ form button {
 #projects-pie-plot path {
   cursor: pointer;
 }
+
+/* Lab 6: Code statistics */
+#stats dl.stats {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 2rem;
+  margin-top: 2rem;
+  align-items: baseline;
+}
+
+#stats dl.stats dt {
+  color: var(--text-color, inherit);
+  font-weight: 500;
+}
+
+#stats dl.stats dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Lab 6: Scatter plot gridlines */
+.gridlines line {
+  stroke: currentColor;
+  stroke-opacity: 0.15;
+}
+
+.gridlines path {
+  display: none;
+}
+
+/* Lab 6: Tooltip */
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+dl.info dd {
+  margin: 0;
+  font-weight: bold;
+}
+
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 10;
+
+  /* Appearance */
+  background: color-mix(in srgb, Canvas 94%, transparent);
+  color: CanvasText;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+
+  /* Elevation */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+
+  /* Border */
+  border: 1px solid color-mix(
+    in srgb,
+    CanvasText 15%,
+    transparent
+  );
+}
+
+
+.dots circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.dots circle:hover {
+  transform: scale(1.5);
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Lab 6: Brush selection animation */
+
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+#chart .selection {
+  fill-opacity: 0.1;
+  stroke: currentColor;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+/* Selected commits */
+#chart .dots circle.selected {
+  fill: #ff6b6b;
+}
+
+/* Unselected commits during brushing */
+#chart .dots circle.dimmed {
+  opacity: 0.25;
+}
+
+/* Lab 6: Language breakdown */
+#language-breakdown {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 2rem;
+  margin: 1rem 0;
+  min-height: 7rem;
+}
+
+#language-breakdown dd {
+  margin: 0;
+  text-align: right;
+  font-weight: bold;
+}
+
+#language-breakdown dt {
+  opacity: 0.8;
+}

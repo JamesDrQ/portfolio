@@ -11,6 +11,7 @@ let pages = [
     { url: 'contact/', title: 'Contact' },
     { url: 'resume/', title: 'Resume' },
     { url: 'https://github.com/JamesDrQ', title: 'GitHub' },
+    { url: 'meta/', title: 'Meta' },
 ];
 
 // Base path for local server and GitHub Pages
