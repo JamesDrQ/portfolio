@@ -139,7 +139,9 @@ export async function fetchJSON(url) {
   }
 }
 
+
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+
   // Check if the container is valid
   if (!containerElement) {
     console.error('Projects container not found');
@@ -164,12 +166,34 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   projects.forEach((project) => {
     const article = document.createElement('article');
 
+    // Resolve image paths for local and GitHub Pages
+    const imageSrc = project.image
+      ? /^https?:\/\//.test(project.image)
+        ? project.image
+        : new URL(
+            project.image.replace(/^(\.\.\/|\.\/)+/, ''),
+            import.meta.url
+          ).href
+      : '';
+
     article.innerHTML = `
       <${headingLevel}>${project.title ?? 'Untitled Project'}</${headingLevel}>
-      ${project.image ? `<img src="${project.image}" alt="${project.title ?? 'Project image'}">` : ''}
+
+      ${imageSrc
+        ? `<img src="${imageSrc}" alt="${project.title ?? 'Project image'}">`
+        : ''}
+
       <div>
         <p>${project.description ?? ''}</p>
         <p class="project-year">${project.year ?? ''}</p>
+
+        ${project.url
+          ? `<p>
+               <a href="${project.url}" target="_blank" rel="noopener noreferrer">
+                 View Project
+               </a>
+             </p>`
+          : ''}
       </div>
     `;
 

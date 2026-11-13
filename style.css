@@ -455,3 +455,35 @@ dl.info[hidden]:not(:hover, :focus-within) {
 #language-breakdown dt {
   opacity: 0.8;
 }
+
+/* Project images */
+.projects article img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  background-color: #252a31;
+  display: block;
+}
+
+/* Project titles */
+.projects article h2,
+.projects article h3 {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  min-height: 2.5em;
+  margin-bottom: 0.75rem;
+}
+
+
+/* Project links */
+.projects article a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.projects article a:hover {
+  text-decoration: underline;
+}

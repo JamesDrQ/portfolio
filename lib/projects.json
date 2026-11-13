@@ -1,6 +1,13 @@
 
 [
   {
+    "title": "Boston Bike Traffic Visualization",
+    "year": 2026,
+    "image": "../images/lab7-bike-traffic.png",
+    "description": "An interactive geospatial visualization of Boston's Bluebikes network using Mapbox and D3, featuring bike lanes, station traffic, time filtering, and arrival-departure patterns.",
+    "url": "https://jamesdrq.github.io/DSC106-Lab7/"
+  },
+  {
     "title": "Agentic AI Real Estate Assistant",
     "year": 2026,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -65,11 +72,5 @@
     "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Placeholder for a data science project completed in 2025. Replace with actual project details."
-  },
-  {
-    "title": "Programming Project (Placeholder)",
-    "year": 2024,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Placeholder for an earlier programming project. Replace with actual project details."
   }
 ]
